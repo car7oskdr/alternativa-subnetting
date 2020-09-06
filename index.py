@@ -1,5 +1,6 @@
 from os import system
 from subnetting.indexIp import ClaseIps as ip
+# esta es una prueba.
 while True:
     print('\n\t\t*******>MENU PRINCIPAL<*******/\n')
     print('\t\t1.-Ir a IP')
