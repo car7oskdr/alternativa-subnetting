@@ -1,5 +1,5 @@
 from os import system
-from subnetting.tipoclase import clasesIp
+from subnetting.valida_ip import validaIp
 
 class ClaseIps():
     
@@ -23,7 +23,7 @@ class ClaseIps():
                     print('\t\tFavor de elegir un numero entero de la lista.\n')
                     print('=' * 85)
                 elif opc == 1:
-                    clasesIp(1)
+                    validaIp(1)
                 elif opc == 2:
                     pass
                 elif opc == 3:

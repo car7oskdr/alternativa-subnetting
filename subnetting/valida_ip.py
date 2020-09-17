@@ -1,10 +1,12 @@
 from os import system
-class clasesIp():
+from subnetting.clases_ip import clases_ip
+class validaIp():
 
 	def __init__(self, opc):
 
 		self.opc = opc
 
+		# validación de IP ***
 		def valida_ip():
 			while True:
 
@@ -68,25 +70,31 @@ class clasesIp():
 			lis_ip_binint.append(lista_ip_int)
 			lis_ip_binint.append(str_ip)
 			return lis_ip_binint
-				# *****************************************************************************************
+		# ********************
 
-		def clase_ip(lista_bin, str_ip):
-			# conocer la clase de la ip. ********************************
-			octeto_uno_bin = lista_bin[0]
+		# conocer la clase de la ip. ***
+		def conocer_clase(bin_ip):
+			
+			var_tem = 0
+			octeto_uno_bin = bin_ip[0]
 			if octeto_uno_bin[0] == '0':
-				print('\n\tLa ip',str_ip,' es clase A su mascara por defecto es: 255.0.0.0 /8\n')
+				var_tem = 1
 			elif octeto_uno_bin[0] == '1' and octeto_uno_bin[1] == '0':
-				print('\n\tLa ip',str_ip,' es clase B su mascara por defecto es: 255.255.0.0 /16\n')
+				var_tem = 2
 			elif octeto_uno_bin[0] == '1' and octeto_uno_bin[1] == '1' and octeto_uno_bin[2] == '0':
-				print('\n\tLa ip',str_ip,' es clase C su mascara por defecto es: 255.255.255.0 /24\n')
+				var_tem = 3
 			elif octeto_uno_bin[0] == '1' and octeto_uno_bin[1] == '1' and octeto_uno_bin[2] == '1' and octeto_uno_bin[3] == '0':
-				print('\n\tLa ip',str_ip,' es clase D generalmente estas IP\'s estan reservadas para multicast.\n')
+				var_tem = 4
 			elif octeto_uno_bin[0] == '1' and octeto_uno_bin[1] == '1' and octeto_uno_bin[2] == '1' and octeto_uno_bin[3] == '1':
-				print('\n\tLa ip',str_ip,' es clase E generalmente estas IP\'s estan reservadas para investigación.\n')
-			# ***********************************************************
+				var_tem = 5
 
-
+			return var_tem
+		# ******************************
 
 		if self.opc == 1:
 			variable = valida_ip()
-			clase_ip(variable[0], variable[2])
+			clases_ip(variable[2], conocer_clase(variable[0]), 1)
+		elif self.opc == 2:
+			pass
+		else:
+			pass
