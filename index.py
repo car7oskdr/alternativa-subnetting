@@ -1,41 +1,45 @@
 from os import system
-from subnetting.indexIp import ClaseIps as ip
-# esta es una prueba.
+from subnetting.indexIp import clasIp as ip
+
 while True:
-    print('\n\t\t*******>MENU PRINCIPAL<*******/\n')
-    print('\t\t1.-Ir a IP')
-    print('\t\t2.-pass por ahora.')
-    print('\t\t3.-pass por ahora.')
-    print('\t\t4.-Salir\n')
+
+    print('\n\t \\*******>Menu<*******/ \n')
+    print('\n\t1.-Go Ip')
+    print('\n\t2.-pass for now')
+    print('\n\t3.-pass for now')
+    print('\n\t4.-Exit.\n')
 
     try:
-        opc = int(input('Favor de eligir una opción: '))
+        opt = int(input('Please select a option: '))
         print('\n\n')
 
-        if opc <= 0:
+        if opt <= 0:
             print('=' * 85)
-            print('\n\t\tHas ingresado un cero o un numero negativo')
-            print('\t\tFavor de elegir un numero entero de la lista.\n')
+            print('\n\tYou entered a zero or a negative number')
+            print('\t\tPlease enter a whole number of the list. \n')
             print('=' * 85)
-        elif opc == 1:
+        elif opt == 1:
             system("clear")
             ip()
-        elif opc == 2:
+        elif opt == 2:
             pass
-        elif opc == 3:
+        elif opt == 3:
             pass
-        elif opc == 4:
+        elif opt == 4:
             print('=' * 85)
-            print('\n\t\t "Gracias por usar la app"\n')
+            print('\n\t Thanks for use the app.')
             print('=' * 85)
             break
         else:
             print('=' * 85)
-            print('\n\t El numero ingresado',opc,' esta fuera del rango de la lista, elige otra opción.\n\n')
+            print('\n\tThe number entered', opt)
+            print('\tit\'s out of list range, select other option\n\n')
             print('=' * 85)
 
     except ValueError:
+
         print('=' * 85)
-        print('\n\tHas escogido un carater o ingresaste un numero con punto decimal.')
-        print('\t\tFavor de elegir un numero entero de la lista.\n')
+        print('\n\t You entered a character or')
+        print('\t a number with a decimal point.')
+        print('\t\t Please select a int number of the list.')
         print('=' * 85)

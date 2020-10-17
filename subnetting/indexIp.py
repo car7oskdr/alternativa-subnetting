@@ -1,43 +1,56 @@
 from os import system
-from subnetting.valida_ip import validaIp
+from subnetting.validIp import validIp
 
-class ClaseIps():
-    
+
+class clasIp():
+
     def __init__(self):
 
         while True:
-            #menu de subnetting
-            print('\n\t\t=======>SUBNETTING<=======/\n')
-            print('\t\t1.-Conocer la clase y mascara de red de una IP.')
-            print('\t\t2.-Conocer la viabilidad del subneteo de un IP.')
-            print('\t\t3.-Realizar subenetting.')
-            print('\t\t4.-Salir\n')
+
+            print('\n\t\t \\=======>SUBNETTING.<=======/\n')
+            print('\t\t1.-Know the class and netmask of a Ip.')
+            print('\t\t2.-Know viability of subnetting.')
+            print('\t\t3.-Subnetting.')
+            print('\t\t4.-Exit.\n')
 
             try:
-                opc = int(input('Favor de eligir una opción: '))
+
+                opt = int(input('Please select a option: '))
                 print('\n\n')
 
-                if opc <= 0:
+                if opt <= 0:
+
                     print('=' * 85)
-                    print('\n\t\tHas ingresado un cero o un numero negativo')
-                    print('\t\tFavor de elegir un numero entero de la lista.\n')
-                    print('=' * 85)
-                elif opc == 1:
-                    validaIp(1)
-                elif opc == 2:
-                    pass
-                elif opc == 3:
-                    pass
-                elif opc == 4:
-                    system("clear")
-                    break
-                else:
-                    print('=' * 85)
-                    print('\n\t El numero ingresado',opc,' esta fuera del rango de la lista, elige otra opción.\n\n')
+                    print('\n\t\t You entered a zero or a negative number.')
+                    print('\t\t Please select a whole number of the list.')
                     print('=' * 85)
 
+                elif opt == 1:
+
+                    validIp(1)
+
+                elif opt == 2:
+
+                    pass
+
+                elif opt == 3:
+
+                    pass
+
+                elif opt == 4:
+
+                    system("clear")
+                    break
+
+                else:
+
+                    print('\n\t The number entered ', opt)
+                    print('\tit\'s out of list range, select other option.')
+
             except ValueError:
+
                 print('=' * 85)
-                print('\n\tHas escogido un carater o ingresaste un numero con punto decimal.')
-                print('\t\tFavor de elegir un numero entero de la lista.\n')
-                print('=' * 85)
+                print('\n\t You entered a character or')
+                print('\t a number with a decimal point')
+                print('\t\t Please enter a whole number of the list.\n')
