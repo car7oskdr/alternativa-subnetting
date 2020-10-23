@@ -1,5 +1,5 @@
 from os import system
-from subnetting.classIp import classIp
+from classIp import classIp
 
 
 class validIp():
@@ -99,14 +99,16 @@ class validIp():
                         5 if the class is E.
 
             """
-            if bin_ip[0] == '0':
+            list_var = bin_ip[0]
+            if list_var[0] == '0':
                 return 1
-            elif bin_ip[0] == '1' and bin_ip[1] == '0':
+            elif list_var[0] == '1' and list_var[1] == '0':
                 return 2
-            elif bin_ip[0] == '1' and bin_ip[1] == '1' and bin_ip[2] == '0':
+            elif list_var[0] == '1' and list_var[1] == '1' and list_var[2] == \
+                    '0':
                 return 3
-            elif bin_ip[0] == '1' and bin_ip[1] == '1' and bin_ip[2] == '1' \
-                    and bin_ip[3] == '0':
+            elif list_var[0] == '1' and list_var[1] == '1' and list_var[2] == \
+                    '1' and bin_ip[3] == '0':
                 return 4
             else:
                 return 5
